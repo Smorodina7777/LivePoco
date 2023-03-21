@@ -10,14 +10,16 @@ import org.example.bean.Spider;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class LifeTest {
-
+    ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ApplicationConfig.class);
     private Leaf leaf;
 
     @Before
     public void init() {
-        leaf = new Leaf(new Bug(new Bird(new Spider(new Snake(new Mangust(new Leopard()))))));
+        leaf = applicationContext.getBean(Leaf.class);
     }
 
     @Test

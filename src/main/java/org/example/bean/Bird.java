@@ -1,7 +1,11 @@
 package org.example.bean;
 
-public class Bird {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
+public class Bird {
+@Autowired
     private Spider spider;
 
     public Bird(Spider spider) {

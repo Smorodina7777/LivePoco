@@ -1,5 +1,10 @@
 package org.example.bean;
 
+import lombok.Setter;
+import org.springframework.stereotype.Component;
+
+@Component
+@Setter
 public class Snake {
     private Mangust mangust;
 
